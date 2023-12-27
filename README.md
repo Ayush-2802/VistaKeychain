@@ -1,4 +1,3 @@
-# vistapass keychain
-A end-to end encrypted password manager
+# keyChain
 
-Built using python
+A end-to end encrypted password manager
