@@ -1,12 +1,5 @@
 from cryptography.fernet import Fernet
 
-#Generating key 
-key = Fernet.generate_key()
- 
-# string the key in a file
-with open('keychain.key', 'wb') as filekey:
-   filekey.write(key)
-
 with open('keychain.key', 'rb') as filekey:
     key = filekey.read()
 
