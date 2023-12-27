@@ -1,12 +1,20 @@
 from cryptography.fernet import Fernet
-message = "Ayushh"
+
+#Generating key 
 key = Fernet.generate_key()
+ 
+# string the key in a file
+with open('keychain.key', 'wb') as filekey:
+   filekey.write(key)
+
+with open('keychain.key', 'rb') as filekey:
+    key = filekey.read()
+
 fernet = Fernet(key)
-encMessage = fernet.encrypt(message.encode())
 
-print("original string: ", message)
-print("encrypted string: ", encMessage)
+with open('Passwords.csv', 'rb') as file:
+    original = file.read()
 
-decMessage = fernet.decrypt(encMessage).decode()
-
-print("decrypted string: ", decMessage)
+encrypted = fernet.encrypt(original)
+with open('Passwords.csv', 'wb') as encrypted_file:
+    encrypted_file.write(encrypted)
