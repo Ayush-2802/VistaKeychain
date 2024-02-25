@@ -1,6 +1,6 @@
 from cryptography.fernet import Fernet
 
-with open('keychain.key', 'rb') as filekey:
+with open('key.key', 'rb') as filekey:
     key = filekey.read()
 	
 # using the key

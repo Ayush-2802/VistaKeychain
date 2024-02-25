@@ -4,5 +4,5 @@ from cryptography.fernet import Fernet
 key = Fernet.generate_key()
 
 # string the key in a file
-with open('keychain.key', 'wb') as filekey:
+with open('key.key', 'wb') as filekey:
     filekey.write(key)
